@@ -11,7 +11,7 @@ class App extends Component {
     console.log(routes);
     return (
       <Router>
-        <div>
+        <div className="app">
           {routes.map((route) => (
             <Route
               key={route.path}
