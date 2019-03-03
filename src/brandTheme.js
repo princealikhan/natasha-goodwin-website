@@ -61,8 +61,7 @@ export const elegantTheme = {
     typography: {
         useNextVariants: true,
         fontFamily: [
-        'Source Sans Pro',
-        'Open Sans'
+            '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue'
         ].join(','),
         fontSize: 14,
         fontWeightLight: 300,
@@ -70,3 +69,5 @@ export const elegantTheme = {
         fontWeightMedium: 500,
     },
   }
+
+  
