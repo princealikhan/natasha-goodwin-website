@@ -59,6 +59,7 @@ export const elegantTheme = {
         borderRadius: 4
     },
     typography: {
+        useNextVariants: true,
         fontFamily: [
         'Source Sans Pro',
         'Open Sans'

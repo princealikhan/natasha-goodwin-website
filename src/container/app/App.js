@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
-import logo from '../../assets/images/logo.svg'
-import './App.scss';
+import {
+  BrowserRouter as Router,
+  Route,
+} from 'react-router-dom'
 
-import Button from '@material-ui/core/Button';
+import { routes } from '../../routes';
 
 class App extends Component {
   render() {
+    console.log(routes);
     return (
-      <div className="App">
-      <img src={logo}></img>
-      <Button color="primary"> 
-          Default
-        </Button>
-      </div>
+      <Router>
+        <div>
+          {routes.map((route) => (
+            <Route
+              key={route.path}
+              path={route.path}
+              component={route.component}
+              exact = {route.exact}
+            />
+          ))}
+        </div>
+      </Router>
     );
   }
 }
