@@ -32,7 +32,7 @@ class Landing extends Component {
         </nav>
         
         {/* Background Image */}
-        <img src={LandingSplash} style={{ 
+        <img src={LandingSplash} alt="Landing" style={{ 
           position: 'fixed',
           right: 0,
           bottom: 0,
@@ -43,16 +43,6 @@ class Landing extends Component {
         {/* End Background Image */}
       </section>
     );
-  }
-}
-
-const styles ={
-  landingBackground: {
-    backgroundImage: `url(${LandingSplash})`,
-    backgroundPosition: 'right bottom',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: '400px 400px',
-    height: '100vh',
   }
 }
 
