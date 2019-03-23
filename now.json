@@ -1,6 +1,7 @@
 {
   "version": 2,
   "name": "natasha-goodwin-website",
+  "alias": "natashagoodwin.me",
   "builds": [
     {
       "src": "package.json",
