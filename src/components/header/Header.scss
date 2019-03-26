@@ -1,0 +1,57 @@
+.navTabsBar{
+    display: block;
+    background-color: #383A5F;
+    padding: 0;
+}
+
+.navTabs {
+    margin: 0 auto;
+    width: auto;
+    white-space: nowrap;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}	
+
+.navTabs::-webkit-scrollbar {
+    display: none;
+}
+
+.navTabs-item {
+    display: inline-block;
+    margin: 0;
+    margin-right: 24px;
+    padding: 0;
+}
+
+.navTabs-item:last-child {
+    margin-right: 0;
+}
+
+.navTabs-list{
+    margin-bottom: 0;
+    margin-left: 0px;
+    padding-left: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.navTabs-item a {
+    display: inline-block;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    white-space: nowrap;
+    padding-bottom: 16px;
+    letter-spacing: 0.9px;
+}
+.navTabs-item a:hover {
+    color: #C7D4E7;
+}
+
+.navTabsBar .navTabs-item .is-active{
+    color: #6F74CD;
+    padding-bottom: 16px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
