@@ -1,0 +1,22 @@
+.hero {
+    background-color: #383A5F;
+    padding: 42px;
+    display: flex;
+    color: white;
+    letter-spacing: 0.6px;
+    .left {
+        flex: 1;
+        max-width: 60%;
+        h3 {
+            font-weight: lighter;
+        }
+    }
+    .right {
+        flex: 1;
+        text-align: right;
+        img {
+            max-width: 320px;
+            object-fit: contain;
+        }
+    }
+}

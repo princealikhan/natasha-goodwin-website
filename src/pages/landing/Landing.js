@@ -3,13 +3,14 @@ import './Landing.scss';
 import LandingSplash from '../../assets/images/landing.png';
 import { Link } from "react-router-dom";
 
+import { siteData } from '../../constant';
 
 class Landing extends Component {
   render() {
     return (
       <section className="landing">
         <header className="header">
-          <h1 className="title">Prince Ali Khan</h1>
+          <h1 className="title">{ siteData.name }</h1>
           <h4 className="skills">Illustrator &#183; Dreamer &#183; Designer &#183; Client Engagement Manager</h4>
         </header>
         
@@ -32,7 +33,7 @@ class Landing extends Component {
         </nav>
         
         {/* Background Image */}
-        <img src={LandingSplash} style={{ 
+        <img src={LandingSplash} alt="Landing" style={{ 
           position: 'fixed',
           right: 0,
           bottom: 0,
@@ -43,16 +44,6 @@ class Landing extends Component {
         {/* End Background Image */}
       </section>
     );
-  }
-}
-
-const styles ={
-  landingBackground: {
-    backgroundImage: `url(${LandingSplash})`,
-    backgroundPosition: 'right bottom',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: '400px 400px',
-    height: '100vh',
   }
 }
 
