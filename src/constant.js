@@ -1,7 +1,7 @@
 import ExperienceBadge from './assets/images/temp-placeholder.svg'
 
 export const siteData = {
-    name: 'Natasah Gooooo',
+    name: 'Natasah Goodwin',
     email: 'pingme@natashagoodwin.me',
     pages: {
         about: {
