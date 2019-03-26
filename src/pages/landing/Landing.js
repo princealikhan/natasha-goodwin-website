@@ -9,7 +9,7 @@ class Landing extends Component {
     return (
       <section className="landing">
         <header className="header">
-          <h1 className="title">Prince Ali Khan</h1>
+          <h1 className="title">Natasha Goodwin</h1>
           <h4 className="skills">Illustrator &#183; Dreamer &#183; Designer &#183; Client Engagement Manager</h4>
         </header>
         

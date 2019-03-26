@@ -56,7 +56,7 @@ class App extends Component {
 }
 
 function demoAsyncCall() {
-  return new Promise((resolve) => setTimeout(() => resolve(), 3500));
+  return new Promise((resolve) => setTimeout(() => resolve(), 4500));
 }
 
 export default App;
