@@ -3,13 +3,14 @@ import './Landing.scss';
 import LandingSplash from '../../assets/images/landing.png';
 import { Link } from "react-router-dom";
 
+import { siteData } from '../../constant';
 
 class Landing extends Component {
   render() {
     return (
       <section className="landing">
         <header className="header">
-          <h1 className="title">Natasha Goodwin</h1>
+          <h1 className="title">{ siteData.name }</h1>
           <h4 className="skills">Illustrator &#183; Dreamer &#183; Designer &#183; Client Engagement Manager</h4>
         </header>
         
