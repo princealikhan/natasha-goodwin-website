@@ -1,0 +1,56 @@
+@import '../../grid.scss';
+.overview-container,.tools {
+    padding: 42px;
+    @media only screen and (min-width:320px) and (max-width:767px)  { 
+        padding: 24px;
+    }
+}
+
+.overview-list {
+    border-radius: 4px;
+    padding: 3.5em;
+    display: flex;
+    flex-direction: column-reverse;
+    transition: all 0.5s ease-out 0s;
+    @media only screen and (min-width:320px) and (max-width:767px)  { 
+        padding: 2.0em;
+    }
+}
+.overview-list:hover {
+    box-shadow: 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12), 0 8px 10px -7px rgba(0,0,0,.2);
+    transition: all 0.5s ease-out 0s;
+    background: white;
+}
+
+.overview-item {
+    margin-top: 60px;
+    
+}
+.overview-number {
+    font-weight: bold;
+    font-size: 3em;
+    color: #9B9B9B;
+    letter-spacing: 1.82px;
+    margin-bottom: 14px;
+}
+
+.overview-list:hover .overview-number{
+    color: #6F74CD;
+}
+
+.overview-text {
+    font-size: 1.8em;
+    color: #383A5F;
+}
+
+.tool-name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.tool-name-text {
+    margin-left: 16px;
+    font-size: 32px;
+    color: #383A5F;
+}
