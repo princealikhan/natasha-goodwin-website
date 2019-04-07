@@ -1,0 +1,189 @@
+/**
+ * Flex Grid -
+ * Version: 0.3.5
+ *
+ * Simple grid built with flex box and sass.
+ *
+ * Matthew Simo - matthew.a.simo@gmail.com
+ */
+
+/**
+ * Grid setup
+ *
+ * The grid will calculate dimensions based on these two variables:
+ * $elegant-grid-columns will inform the grid loops how many columns there should be.
+ * $elegant-grid-gutter will inform the grid loops how big eac column's gutters should be.
+ *
+ * The grid will name columns, rows, offsets based on these three variables:
+ * $elegant-grid-class-row string used for the row class
+ * $elegant-grid-class-col string used for the column class
+ * $elegant-grid-class-off string used for the offset class
+ */
+ $elegant-grid-columns: 12 !default;
+ $elegant-grid-gutter: 0.5rem !default;
+ // $elegant-grid-gutter: 0rem !default;
+ 
+ $elegant-grid-class-row: 'is-row' !default;
+ $elegant-grid-class-col: 'is-col' !default;
+ $elegant-grid-class-off: 'is-off' !default;
+ 
+ 
+ /**
+  * Break point namespace object
+  *
+  * Set the default namespace object with these defaults with the
+  * understanding that you can pass in whatever you might require for your site.
+  *
+  * $elegant-grid-breakpoints is a Sass list with nested lists inside. Each sub list defines two things.
+  * 1. The namespace for that breakpoint. (Required) (i.e. xs, sm, md, lg)
+  * 2. The min-width measurement for the breakpoint for that namespace. (i.e. 48em, 62em, 75em)
+  *
+  * Note: These should be in the proper order (at least till libsass handles map keys properly).
+  *
+  * Note: If the measurement is left out then it will be skipped when generating
+  * the grid and applied to global styles.
+  *
+  */
+ $elegant-grid-breakpoints: (
+   (xs),
+   (sm, 768px),
+   (md, 992px),
+   (lg, 1200px)
+ ) !default;
+ 
+ /**
+  * Class Name Defaults
+  *
+  * Define class names for columns, rows and offsets in case compatibility with other
+  * libraries is necessary.
+ /**
+  * Calculate column size percentage
+  */
+ @function get-col-percent($column-num) {
+ 
+   @return $column-num / $elegant-grid-columns * 100%;
+ 
+ }
+ 
+ /**
+  * Spacing mixin to create uniform margin/padding
+  */
+ @mixin spacing( $value, $type: margin, $orientation: vertical ) {
+   @if $orientation == vertical {
+     #{ $type }-top: $value;
+     #{ $type }-bottom: $value;
+   } @else {
+     #{ $type }-left: $value;
+     #{ $type }-right: $value;
+   }
+ }
+ 
+ /**
+  * Row wrapper class, flex box parent.
+  */
+ .#{ $elegant-grid-class-row } {
+   box-sizing: border-box;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   @include spacing( ( -$elegant-grid-gutter ), margin, horizontal );
+ }
+ 
+ 
+ %#{ $elegant-grid-class-col } {
+   box-sizing: border-box;
+   display: flex;
+   flex-direction: column;
+   flex-grow: 0;
+   flex-shrink: 0;
+   min-height: 1px;
+   @include spacing( ( $elegant-grid-gutter ), padding, horizontal );
+ }
+ 
+ %#{ $elegant-grid-class-col }-flex {
+   @extend %#{ $elegant-grid-class-col };
+   flex-grow: 1;
+   flex-basis: 0;
+   max-width: 100%;
+ }
+ 
+ 
+ /**
+  * Generate a set of grid column classes using a namespace
+  *
+  * .#{ $elegant-grid-class-col }-[namespace] for intelligent column division
+  * .#{ $elegant-grid-class-col }-[namespace]-[number] for a column that covers a specific number of columns (e.g. 1-12 by default)
+  * .#{ $elegant-grid-class-off }-[namespace]-[number] for pushing a col a specific number of columns (e.g. 1-11 by default)
+  * .#{ $elegant-grid-class-off }-[namespace]-reset for resetting a col's offset for that and larger namespaces
+  */
+ 
+ @mixin grid-base( $namespace ) {
+   .#{ $elegant-grid-class-col }-#{$namespace} {
+     @extend %#{ $elegant-grid-class-col }-flex;
+   }
+ 
+   @for $i from 1 through $elegant-grid-columns {
+     .#{ $elegant-grid-class-col }-#{$namespace}-#{$i} {
+       @extend %#{ $elegant-grid-class-col };
+     }
+   }
+ }
+ 
+ @mixin grid-sizes( $namespace ) {
+ 
+   // Run the loop for as many columns as speficied
+   @for $i from 1 through $elegant-grid-columns {
+     .#{ $elegant-grid-class-col }-#{$namespace}-#{$i} {
+       /* Block Debuging */
+       flex-basis: get-col-percent($i);
+       max-width:  get-col-percent($i);
+     }
+   }
+ 
+   @for $i from 1 through $elegant-grid-columns {
+ 
+     // Don't include the .off class for the last column
+     @if ( $i != $elegant-grid-columns ) {
+       .#{ $elegant-grid-class-off }-#{$namespace}-#{$i} {
+         margin-left: get-col-percent($i);
+       }
+     }
+ 
+   }
+ 
+   .#{ $elegant-grid-class-off }-#{$namespace}-reset {
+     margin-left: 0;
+   }
+ 
+ }
+ 
+ 
+ /**
+  * Build the grid in two steps, to help minimize file size
+  * Step 1, for each namespace, create the grid-base
+  * Step 2, for each namespace, wrap the col width/offset measurements in their breakpoint media query
+  */
+ @each $val in $elegant-grid-breakpoints {
+ 
+   $namespace: nth($val, 1);
+   @include grid-base( $namespace );
+ 
+ }
+ 
+ @each $val in $elegant-grid-breakpoints {
+   @if length($val) == 1 {
+ 
+     $namespace: nth($val, 1);
+     @include grid-sizes( $namespace );
+ 
+   } @else {
+ 
+     $namespace: nth($val, 1);
+     $size: nth($val, 2);
+ 
+     @media only screen and (min-width: #{$size}) {
+       @include grid-sizes( $namespace );
+     }
+   }
+ }
+ 
