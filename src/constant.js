@@ -14,7 +14,7 @@ export const siteData = {
         experience: {
             hero: {
                 header: 'Work Experience',
-                description: 'I am a passionate (and hence a) self taught artist. Along with a full time job as Client Engagament Manager at a Corporate Wellness company called Zoojoo.be, I also maintain time to build and expand my skillset in the design field. Over the last one year, I have worked on a couple of UI & UX projects on the side. I also own an Instagram comic page that translates my daily experiences into funny webcomics. You can download my resume here for a detailed understanding of my experience.',
+                description: 'I am a passionate (and hence a) self taught artist. Along with a full time job as Client Engagament Manager at a Corporate Wellness company called Zoojoo.be',
                 badge: ExperienceBadge,
                 cta: {
                     text: 'Download',
