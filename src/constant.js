@@ -1,4 +1,4 @@
-import ExperienceBadge from './assets/images/temp-placeholder.svg'
+import ExperienceBadge from './assets/images/experience-badge.png'
 
 export const siteData = {
     name: 'Natasah Goodwin',
