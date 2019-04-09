@@ -25,16 +25,23 @@ import './Experience.scss';
 
 class Experience extends Component {
 
+  componentDidMount(){
+    this.handleDialogOpen = this.handleDialogOpen.bind(this);
+  }
+
   state = {
     open: false,
     currentDialogData: overview['design'],
   };
 
-  handleClickOpen = () => {
-    this.setState({ open: true });
+  handleDialogOpen = (selectedDialog) => {
+    this.setState({ 
+      open: true,
+      currentDialogData: overview[selectedDialog]
+     });
   };
 
-  handleClose = () => {
+  handleDialogClose = () => {
     this.setState({ open: false });
   };
 
@@ -55,7 +62,7 @@ class Experience extends Component {
         <div className='overview-container'>
           <h2>Quick Overview:</h2>
           <div className="is-row">
-            <div className="is-col-xs-12 is-col-sm-6 is-col-md-4 is-col-lg-4 overview-list">
+            <div className="is-col-xs-12 is-col-sm-6 is-col-md-4 is-col-lg-4 overview-list" onClick={() => this.handleDialogOpen('design')}>
               <div className="overview-item">
                 <div className="overview-number">01</div>
                 <div className="overview-text">
@@ -64,7 +71,7 @@ class Experience extends Component {
                 </div>
               </div>
             </div>
-            <div className="is-col-xs-12 is-col-sm-6 is-col-md-4 is-col-lg-4 overview-list">
+            <div className="is-col-xs-12 is-col-sm-6 is-col-md-4 is-col-lg-4 overview-list" onClick={() => this.handleDialogOpen('client')}>
               <div className="overview-item">
                 <div className="overview-number">02</div>
                 <div className="overview-text">
@@ -73,7 +80,7 @@ class Experience extends Component {
                 </div>
               </div>
             </div>
-            <div className="is-col-xs-12 is-col-sm-6 is-col-md-4 is-col-lg-4 overview-list">
+            <div className="is-col-xs-12 is-col-sm-6 is-col-md-4 is-col-lg-4 overview-list" onClick={() => this.handleDialogOpen('marketing')}>
               <div className="overview-item">
                 <div className="overview-number">03</div>
                 <div className="overview-text">
@@ -86,7 +93,7 @@ class Experience extends Component {
         </div>
         
         {/* Tools  */}
-        <div class="tools">
+        <div className="tools">
           <h2>Tools</h2>
           <div className="is-row">
               <div className="is-col-xs-12 is-col-sm-6 is-col-md-4 is-col-lg-4">
@@ -144,18 +151,17 @@ class Experience extends Component {
 
       {/* Dialog */}
       <div>
-        <Button onClick={this.handleClickOpen}>Open responsive dialog</Button>
         <Dialog
           fullScreen={fullScreen}
           open={this.state.open}
-          onClose={this.handleClose}>
+          onClose={this.handleDialogClose}>
           <DialogTitle>
             <div className="model-header">
               <div className="title"> 
                 { currentDialogData.title }
                 </div>
               <div>
-                <IconButton color="primary" onClick={this.handleClose}>
+                <IconButton color="primary" onClick={this.handleDialogClose}>
                   <img src={CloseIcon}/>
                 </IconButton>
               </div>
@@ -182,9 +188,6 @@ class Experience extends Component {
               } 
             </DialogContentText>
           </DialogContent>
-          <DialogActions>
-           
-          </DialogActions>
         </Dialog>
       </div>
       </section>
