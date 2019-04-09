@@ -54,3 +54,34 @@
     font-size: 32px;
     color: #383A5F;
 }
+.model {
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        div { align-self: center; }
+        .title {
+            color: #383A5F;    
+            font-weight: 800;
+        }
+    }
+    
+    &-subheading {
+        font-weight: 600;
+        color: #383A5F;
+    }
+    &-desg, &-timeline {
+        font-size: 14px;
+        color: #383A5F;   
+    }
+    &-description {
+        margin: 18px 0px;
+        color: #383A5F;
+        font-size: 16px;
+    }
+    &-points {
+        .point{
+            font-size: 16px;
+            color: #383A5F;
+        }
+    }
+}
