@@ -2,16 +2,47 @@ import React, { Component } from 'react';
 import Header from '../../components/header/Header';
 import Hero from '../../components/hero/Hero';
 import { siteData } from '../../constant';
+import { overview } from './overview';
+
 import SketchIcon from '../../assets/images/sketch-icon.svg';
 import IllustratorIcon from '../../assets/images/illustrator-icon.svg';
 import MailchimpIcon from '../../assets/images/mailchimp-icon.svg';
 import PhotoshopIcon from '../../assets/images/photoshop-icon.svg';
 import ProcreateIcon from '../../assets/images/procreate-icon.svg';
 
+import PropTypes from 'prop-types';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '../../assets/images/close-icon.svg';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import withMobileDialog from '@material-ui/core/withMobileDialog';
+
 import './Experience.scss';
 
 class Experience extends Component {
+
+  state = {
+    open: false,
+    currentDialogData: overview['design'],
+  };
+
+  handleClickOpen = () => {
+    this.setState({ open: true });
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
+  };
+
   render() {
+
+    const { fullScreen } = this.props;
+    const { currentDialogData } = this.state;
+    console.warn(overview['design']);
     return (
       <section>
         <Header/>
@@ -111,9 +142,59 @@ class Experience extends Component {
           </div>
         </div>
 
+      {/* Dialog */}
+      <div>
+        <Button onClick={this.handleClickOpen}>Open responsive dialog</Button>
+        <Dialog
+          fullScreen={fullScreen}
+          open={this.state.open}
+          onClose={this.handleClose}>
+          <DialogTitle>
+            <div className="model-header">
+              <div className="title"> 
+                { currentDialogData.title }
+                </div>
+              <div>
+                <IconButton color="primary" onClick={this.handleClose}>
+                  <img src={CloseIcon}/>
+                </IconButton>
+              </div>
+            </div>
+          </DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              <div className="model-subheading">{ currentDialogData.subHeading }</div>
+              <div className="model-desg">{ currentDialogData.desg }</div>
+              <div className="model-timeline">{ currentDialogData.timeline }</div>
+
+              <div className="model-description">{ currentDialogData.desc }</div>
+              { (currentDialogData.keyPoints && currentDialogData.keyPoints.length > 0) ?
+                (
+                  <ul className="model-points">
+                    {
+                      currentDialogData.keyPoints.map( point => (
+                        <li className="point">{point}</li>
+                      ))
+                    }
+                  </ul>
+                ):
+                ""
+              } 
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+           
+          </DialogActions>
+        </Dialog>
+      </div>
       </section>
     );
   }
 }
 
-export default Experience;
+Experience.propTypes = {
+  fullScreen: PropTypes.bool.isRequired,
+};
+
+export default withMobileDialog()(Experience);
+
