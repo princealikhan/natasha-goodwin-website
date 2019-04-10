@@ -13,9 +13,7 @@ export const overview = {
        timeline: "2016-Present",
        desc: "Equipped with an exceptional eye for detail and a killer taste, I started my journey as a Marketing associate, before expanding into creating comics - eventually finding a true passion in human centred design and illustration.",
        keyPoints: [
-       	'Lorem Ipsume',
-       	'Data',
-       	'Fun'
+       	'Lorem Ipsume'
        ],
        tools: [
        	{
