@@ -15,16 +15,16 @@ export const overview = {
        keyPoints: [
        	'Skilled in Sketch, Adobe Photoshop & Illustrator, Procreate, Autodesk Sketchbook. Also learning and experimenting with Adobe After Effects and InDesign',
        	'Designed a portfolio website for a Front End Developer',
-       	'Designed a portfolio website for a Front End Developer'
-       	'Created a mobile to - do app with disappearing checklist items in 24 hours called 24hrsToDo, based on intense UX research'
-       	'Spearheaded all marketing design concepts at zoojoo.be'
-       	'Designed wireframes for a Bed Time Story app for adults with postive messaging and morals based on the crisis they find themselves in (ongoing project)'
-       	'Created the first logo, and some illustrations, for an animal rescue website & app called Animapp, using Autodesk Sketchbook Pro (mobile app)'
-       	'Created a design clone of the meditation app, Headspace'
-       	'Illustrated an eBook for one of US’ top mindfulness meditation app, Aware, called ‘A Merrier Day’ - which included quick daily to-do to uplift one’s mood'
-       	'Illustrated logos for a local hair stylist and a food business'
-       	'Own an Instagram comic page called MessyBun Comics with over 20K followers and counting'
-       	'Helped with website content for the ‘Economics Forum Association’ in college'
+       	'Designed a portfolio website for a Front End Developer',
+       	'Created a mobile to - do app with disappearing checklist items in 24 hours called 24hrsToDo, based on intense UX research',
+       	'Spearheaded all marketing design concepts at zoojoo.be',
+       	'Designed wireframes for a Bed Time Story app for adults with postive messaging and morals based on the crisis they find themselves in (ongoing project)',
+       	'Created the first logo, and some illustrations, for an animal rescue website & app called Animapp, using Autodesk Sketchbook Pro (mobile app)',
+       	'Created a design clone of the meditation app, Headspace',
+       	'Illustrated an eBook for one of US’ top mindfulness meditation app, Aware, called ‘A Merrier Day’ - which included quick daily to-do to uplift one’s mood',
+       	'Illustrated logos for a local hair stylist and a food business',
+       	'Own an Instagram comic page called MessyBun Comics with over 20K followers and counting',
+       	'Helped with website content for the ‘Economics Forum Association’ in college',
        ],
        tools: [
        	{
@@ -42,12 +42,12 @@ export const overview = {
        keyPoints: [
        	'Clients include Accenture, HP, Mindtree, JLL, Unisys, Tesco, Publicis Sapient to name a few.',
        	'Day to day activities involve interactions with Country Leads, VP’s, HR Heads, and professionals in Senior Management.',
-       	'Spearhead discussions among the client stakeholders, sales, product and other internal teams to identify potential opportunities in redefining workplace wellness for key customer accounts as well as help the product team build/improve features and UX flows.'
-       	'Interpret data from analytics tools such as Hotjar and Redash to improve user experience, plan for better engagement strategies and A/B test on communication channels such as Email and Mobile marketing.'
-       	'Conduct fortnightly webinars across client base using GoToWebinar on various facets of wellness such as Physical and mental health by collaborating with a network of experts. Also, use this tool to help in product feature discovery for our users'
-       	'Established a Process & Strategy Map for User adoption, User Onboarding, Renewal Management and launch of new features with – Effort Tracking & Resource Management. Tools used for project management are easyBI & Basecamp, Trello along with Microsoft Excel.'
-       	'Exposure to tools such as Marvel, Balsamiq, Flinto for wireframes and prototyping'
-       	'Create dashboards for reporting performance as well as create business presentations to showcase growth hacking efforts, roadmap and performance metrics to all stakeholders of respective accounts.'
+       	'Spearhead discussions among the client stakeholders, sales, product and other internal teams to identify potential opportunities in redefining workplace wellness for key customer accounts as well as help the product team build/improve features and UX flows.',
+       	'Interpret data from analytics tools such as Hotjar and Redash to improve user experience, plan for better engagement strategies and A/B test on communication channels such as Email and Mobile marketing.',
+       	'Conduct fortnightly webinars across client base using GoToWebinar on various facets of wellness such as Physical and mental health by collaborating with a network of experts. Also, use this tool to help in product feature discovery for our users',
+       	'Established a Process & Strategy Map for User adoption, User Onboarding, Renewal Management and launch of new features with – Effort Tracking & Resource Management. Tools used for project management are easyBI & Basecamp, Trello along with Microsoft Excel.',
+       	'Exposure to tools such as Marvel, Balsamiq, Flinto for wireframes and prototyping',
+       	'Create dashboards for reporting performance as well as create business presentations to showcase growth hacking efforts, roadmap and performance metrics to all stakeholders of respective accounts.',
        ],
        tools: [
        	{
