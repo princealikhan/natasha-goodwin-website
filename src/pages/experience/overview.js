@@ -57,15 +57,20 @@ export const overview = {
        ]
     },
     marketing: {
-       title: 'Marketing',
-       subHeading: 'Part-time Designer and Hobbyist Illustrator',
-       desg: "Freelance",
-       timeline: "2016-Present",
-       desc: "Equipped with an exceptional eye for detail and a killer taste, I started my journey as a Marketing associate, before expanding into creating comics - eventually finding a true passion in human centred design and illustration.",
+       title: 'Marketing and Communications',
+       subHeading: 'Marketing Associate',
+       desg: "zoojoo.be",
+       timeline: "2015 - 2016",
+       desc: "zoojoo.be is a game based social wellness platform that unites the workforce to form healthier habits. As a Marketing Associate, I was responsible for developing new engaging campaigns and strategies to drive traffic and increase revenue to our platform.",
        keyPoints: [
-       	'Lorem Ipsume',
-       	'Data',
-       	'Fun'
+       	'Was responsible for managing the promotional strategies to establish and grow brand presence in client corporates',
+       	'Worked closely with the growth team to develop onsite and online marketing campaigns for successful visibility of zoojoo.be and increased employee engagement, tracked the same through data analysis tools like Redash and Mandrill',
+       	'Created email campaigns through marketing automation tools like Mautic and Mailchimp',
+       	'Organized onsite health talks, workshops and roadshows at client locations',
+       	'Conceptualized and implemented branding collateral such as email designs, detailed company brochures, standees, digital standees, newsletters, lobby videos and more as per the concerned client’s brand guidelines',
+       	'Worked with the content team, design team and external event coordinators for sign up drive campaigns at client locations',
+       	'Worked with the Product Team for content of the website and mobile app',
+       	'Was promoted to client engagement manager to closely work with the clients and ensure end to end delivery of all Zoojoobe driven employee engagement initiatives'
        ],
        tools: [
        	{
