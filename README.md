@@ -1,4 +1,4 @@
-# Create React App c
+# Create React App
 
 In this example we will be deploying a simple "Hello World" example with Create React App.
 
