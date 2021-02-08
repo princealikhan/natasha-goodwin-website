@@ -56,10 +56,5 @@ We also need to include a script in `package.json` named `"now-build"` that spec
 }
 ```
 
-We are now ready to deploy the app.
-
-```
-now
-```
 
 For more information on deploying a CRA generated React project on Now, [read our Guide](https://zeit.co/guides/deploying-react-with-now-cra).
